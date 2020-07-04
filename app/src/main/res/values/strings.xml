@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Simulador de Juros</string>
+    <string name="first_tab">Aplicação única</string>
+    <string name="second_tab">Aplicação contínua</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="initial_value">Digite o valor inicial</string>
+    <string name="aplications_value">Valor das aplicações</string>
+    <string name="ad_id">ca-app-pub-7567513635988403/6589696253</string>
+</resources>

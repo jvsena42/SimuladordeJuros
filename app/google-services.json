@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "96305268396",
+    "firebase_url": "https://simuladordejuros.firebaseio.com",
+    "project_id": "simuladordejuros",
+    "storage_bucket": "simuladordejuros.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:96305268396:android:94bf7d30620953fb918109",
+        "android_client_info": {
+          "package_name": "com.app.simuladordejuros"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "96305268396-ggutefj5iadrbjmhiofdgk4aj918h71a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.simuladordejuros",
+            "certificate_hash": "3d2e08458547daad2e65e17419f2a29d52194e17"
+          }
+        },
+        {
+          "client_id": "96305268396-r41iapgajhkapoicel5j4jmgc4m6n2i1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6A0DFT9ixXqUCjIy28jezgqUIqxLX3S8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "96305268396-r41iapgajhkapoicel5j4jmgc4m6n2i1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
