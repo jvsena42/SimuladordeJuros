@@ -6,15 +6,15 @@ import android.os.Bundle
 import android.view.View
 import com.app.simuladordejuros.R
 
-class InitialValueActivity : AppCompatActivity() {
+class AplicationValueActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_initial_value)
+        setContentView(R.layout.activity_aplication_value)
     }
 
-    fun goToAplicationValue(view: View){
-        val i:Intent = Intent(this,AplicationValueActivity::class.java)
+    fun goToTax(view: View){
+        val i: Intent = Intent(this,TaxActivity::class.java)
         startActivity(i)
     }
 }

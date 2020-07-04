@@ -12,7 +12,13 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".activity.activity.InitialValueActivity">
+        <activity android:name=".activity.activity.TimeActivity">
+        </activity>
+        <activity android:name=".activity.activity.TaxActivity">
+        </activity>
+        <activity android:name=".activity.activity.AplicationValueActivity">
+        </activity>
+        <activity android:name=".activity.activity.MainActivity">
         </activity>
 
         <meta-data
@@ -21,7 +27,7 @@
 
         <activity android:name=".activity.activity.ResultActivity">
         </activity>
-        <activity android:name=".activity.activity.MainActivity">
+        <activity android:name=".activity.activity.InitialValueActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

@@ -8,4 +8,7 @@
     <string name="initial_value">Digite o valor inicial</string>
     <string name="aplications_value">Valor das aplicações</string>
     <string name="ad_id">ca-app-pub-7567513635988403/6589696253</string>
+    <string name="tax_value">Digite o valor da taxa de juros mensal</string>
+    <string name="time_value">Digite o tempo da aplicação</string>
+    <string name="calc">Calcular</string>
 </resources>

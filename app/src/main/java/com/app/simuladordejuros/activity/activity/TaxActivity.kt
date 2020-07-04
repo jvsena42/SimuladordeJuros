@@ -5,16 +5,17 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.app.simuladordejuros.R
+import java.sql.Time
 
-class InitialValueActivity : AppCompatActivity() {
+class TaxActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_initial_value)
+        setContentView(R.layout.activity_tax)
     }
 
-    fun goToAplicationValue(view: View){
-        val i:Intent = Intent(this,AplicationValueActivity::class.java)
+    fun goToTime(view: View){
+        val i: Intent = Intent(this,TimeActivity::class.java)
         startActivity(i)
     }
 }
