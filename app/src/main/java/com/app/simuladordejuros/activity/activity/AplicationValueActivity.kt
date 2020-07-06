@@ -30,7 +30,6 @@ class AplicationValueActivity : AppCompatActivity() {
             val i: Intent = Intent(this,TaxActivity::class.java)
             aplication.aplicationValue = aplicationValue
             i.putExtra("aplicationValue",aplication)
-            Log.d("VALORES", aplication.toString())
             startActivity(i)
         }else{
             Toast.makeText(this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show()
