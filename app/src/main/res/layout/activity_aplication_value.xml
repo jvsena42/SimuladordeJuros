@@ -25,14 +25,14 @@
             android:layout_height="wrap_content"
             android:id="@+id/textView2" android:textSize="16sp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="16dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/editText2" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/id_aplication_value" android:layout_marginBottom="8dp"
             app:layout_constraintHorizontal_bias="0.0"/>
     <EditText
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="numberDecimal"
             android:ems="10"
-            android:id="@+id/editText2"
+            android:id="@+id/id_aplication_value"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp" android:padding="10dp"
             android:hint="20.50" android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"

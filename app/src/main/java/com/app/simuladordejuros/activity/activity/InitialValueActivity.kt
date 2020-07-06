@@ -3,8 +3,12 @@ package com.app.simuladordejuros.activity.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.Toast
 import com.app.simuladordejuros.R
+import com.app.simuladordejuros.activity.model.Aplication
+import kotlinx.android.synthetic.main.activity_main.*
 
 class InitialValueActivity : AppCompatActivity() {
 
@@ -14,7 +18,19 @@ class InitialValueActivity : AppCompatActivity() {
     }
 
     fun goToAplicationValue(view: View){
-        val i:Intent = Intent(this,AplicationValueActivity::class.java)
-        startActivity(i)
+
+        val initialValue = id_initial_value.text.toString().toDouble()
+        val aplication = Aplication( initialValue)
+        Log.d("VALOR",aplication.toString())
+
+        if (initialValue != null){
+            val i:Intent = Intent(this,AplicationValueActivity::class.java)
+            i.putExtra("initialValue",aplication)
+            startActivity(i)
+        }else{
+            Toast.makeText(this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show()
+        }
+
     }
 }
+
