@@ -11,4 +11,5 @@
     <string name="tax_value">Digite o valor da taxa de juros mensal</string>
     <string name="time_value">Digite o tempo da aplicação</string>
     <string name="calc">Calcular</string>
+    <string name="text_result">Você receberá</string>
 </resources>

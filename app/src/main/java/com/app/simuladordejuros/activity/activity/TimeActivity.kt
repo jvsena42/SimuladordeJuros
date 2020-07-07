@@ -27,7 +27,7 @@ class TimeActivity : AppCompatActivity() {
         if (time!=null){
             val i: Intent = Intent(this,ResultActivity::class.java)
             aplication.time = time
-            i.putExtra("taxValue",aplication)
+            i.putExtra("time",aplication)
             Log.d("TAX",aplication.toString())
             startActivity(i)
         }else{

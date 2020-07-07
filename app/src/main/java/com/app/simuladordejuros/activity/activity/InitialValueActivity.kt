@@ -8,7 +8,7 @@ import android.view.View
 import android.widget.Toast
 import com.app.simuladordejuros.R
 import com.app.simuladordejuros.activity.model.Aplication
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_initial_value.*
 
 class InitialValueActivity : AppCompatActivity() {
 
@@ -20,10 +20,8 @@ class InitialValueActivity : AppCompatActivity() {
     fun goToAplicationValue(view: View){
 
         val initialValue = id_initial_value.text.toString().toDouble()
-        val aplication = Aplication( initialValue)
-        Log.d("VALOR",aplication.toString())
-
         if (initialValue != null){
+            val aplication = Aplication( initialValue)
             val i:Intent = Intent(this,AplicationValueActivity::class.java)
             i.putExtra("initialValue",aplication)
             startActivity(i)

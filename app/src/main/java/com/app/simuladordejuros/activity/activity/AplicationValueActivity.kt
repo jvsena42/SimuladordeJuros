@@ -9,7 +9,6 @@ import android.widget.Toast
 import com.app.simuladordejuros.R
 import com.app.simuladordejuros.activity.model.Aplication
 import kotlinx.android.synthetic.main.activity_aplication_value.*
-import kotlinx.android.synthetic.main.activity_main.*
 
 class AplicationValueActivity : AppCompatActivity() {
 
