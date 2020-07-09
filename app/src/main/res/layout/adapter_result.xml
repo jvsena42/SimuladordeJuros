@@ -11,5 +11,6 @@
             android:gravity="left|center_vertical"
             android:padding="5dp"
             android:text="Mês 1: 100 x 1,1+10 = 120"
-            android:textSize="14sp" />
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
 </LinearLayout>

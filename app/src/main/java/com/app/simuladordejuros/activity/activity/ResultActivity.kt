@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.app.simuladordejuros.R
 import com.app.simuladordejuros.activity.adapter.AdapterAplication
 import com.app.simuladordejuros.activity.model.Aplication
+import com.google.android.gms.ads.AdView
 import kotlinx.android.synthetic.main.activity_result.*
 import kotlin.math.log
 

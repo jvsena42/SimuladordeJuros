@@ -33,7 +33,9 @@
                         android:gravity="center"
                         android:padding="8dp"
                         android:text="@string/text_result"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
