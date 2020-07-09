@@ -30,6 +30,7 @@ class TaxActivity : AppCompatActivity() {
             aplication.tax = tax
             i.putExtra("taxValue",aplication)
             startActivity(i)
+            finish()
         }else{
             Toast.makeText(this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show()
         }

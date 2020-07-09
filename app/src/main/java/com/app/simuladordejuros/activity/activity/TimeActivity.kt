@@ -30,6 +30,7 @@ class TimeActivity : AppCompatActivity() {
             i.putExtra("time",aplication)
             Log.d("TAX",aplication.toString())
             startActivity(i)
+            finish()
         }else{
             Toast.makeText(this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show()
         }

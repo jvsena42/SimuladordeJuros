@@ -1,6 +1,7 @@
 package com.app.simuladordejuros.activity.adapter
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,10 +25,12 @@ class AdapterAplication(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val aplication = aplications[position]
+        var aplication = aplications[position]
+
+       // Log.d("APLICATIONS","Mês${aplication.month}: ${aplication.previousBalance} x ${aplication.tax} = ${aplication.balance} ")
 
         holder?.let {
-            it.textAplication.text = "Mês ${aplication.month}: ${aplication.previousBalance} x ${aplication.tax} = ${aplication.balance}"
+            it.textAplication.text = "Mês ${aplication.month}: ${String.format("%.2f", aplication.previousBalance)} x ${aplication.tax} + ${aplication.aplicationValue} = ${String.format("%.2f", aplication.balance)}"
         }
     }
 
