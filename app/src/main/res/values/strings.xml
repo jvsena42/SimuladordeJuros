@@ -1,15 +1,12 @@
 <resources>
     <string name="app_name">Simulador de Juros</string>
-    <string name="first_tab">Aplicação única</string>
-    <string name="second_tab">Aplicação contínua</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="initial_value">Digite o valor inicial</string>
-    <string name="aplications_value">Valor das aplicações</string>
+    <string name="aplications_value">Valor das aplicações mensais</string>
     <string name="ad_id">ca-app-pub-7567513635988403/6589696253</string>
     <string name="tax_value">Digite o valor da taxa de juros mensal</string>
-    <string name="time_value">Digite o tempo da aplicação</string>
+    <string name="time_value">Por quantos meses você quer investir?</string>
     <string name="calc">Calcular</string>
     <string name="text_result">Você receberá</string>
+    <string name="calc_again">Calcular Novamente</string>
 </resources>

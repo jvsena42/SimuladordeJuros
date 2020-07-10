@@ -30,7 +30,7 @@ class AdapterAplication(
        // Log.d("APLICATIONS","Mês${aplication.month}: ${aplication.previousBalance} x ${aplication.tax} = ${aplication.balance} ")
 
         holder?.let {
-            it.textAplication.text = "Mês ${aplication.month}: ${String.format("%.2f", aplication.previousBalance)} x ${aplication.tax} + ${aplication.aplicationValue} = ${String.format("%.2f", aplication.balance)}"
+            it.textAplication.text = "Mês ${aplication.month}: ${String.format("%.2f", aplication.previousBalance)} x ${String.format("%.2f", aplication.tax)} + ${String.format("%.2f", aplication.aplicationValue)} = ${String.format("%.2f", aplication.balance)}"
         }
     }
 

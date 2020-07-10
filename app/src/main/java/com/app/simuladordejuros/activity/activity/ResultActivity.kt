@@ -1,5 +1,6 @@
 package com.app.simuladordejuros.activity.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -64,5 +65,11 @@ class ResultActivity : AppCompatActivity() {
 
         id_result.text = ("Seu saldo será de R$ ${String.format("%.2f", balance)}")
 
+    }
+
+    fun backToStart(view: View){
+        val i: Intent = Intent(this,InitialValueActivity::class.java)
+        startActivity(i)
+        finish()
     }
 }

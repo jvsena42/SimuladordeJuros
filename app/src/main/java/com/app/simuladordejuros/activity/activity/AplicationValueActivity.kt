@@ -22,7 +22,7 @@ class AplicationValueActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_aplication_value)
 
-        aplication = intent.extras.get("initialValue") as Aplication
+        aplication = intent.extras?.get("initialValue") as Aplication
 
         //initialize admob
         MobileAds.initialize(this, "ca-app-pub-7567513635988403~5896288031")

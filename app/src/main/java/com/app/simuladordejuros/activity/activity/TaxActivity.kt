@@ -22,7 +22,7 @@ class TaxActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tax)
 
-        aplication = intent.extras.get("aplicationValue") as Aplication
+        aplication = intent.extras?.get("aplicationValue") as Aplication
 
         //initialize admob
         MobileAds.initialize(this, "ca-app-pub-7567513635988403~5896288031")
@@ -53,7 +53,7 @@ class TaxActivity : AppCompatActivity() {
 
         val textTax = id_tax.text.toString()
         if (!textTax.isNullOrEmpty()){
-            val tax = textTax.toDouble()
+            val tax = (textTax.toDouble()/100)+1
             val i: Intent = Intent(this,TimeActivity::class.java)
             aplication.tax = tax
             i.putExtra("taxValue",aplication)

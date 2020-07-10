@@ -22,7 +22,7 @@ class TimeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_time)
 
-        aplication = intent.extras.get("taxValue") as Aplication
+        aplication = intent.extras?.get("taxValue") as Aplication
 
         //initialize admob
         MobileAds.initialize(this, "ca-app-pub-7567513635988403~5896288031")
@@ -51,10 +51,10 @@ class TimeActivity : AppCompatActivity() {
     fun goToResult(view: View){
 
         var textTime = id_time.text.toString()
-        if (textTime.isNullOrEmpty()){
+        if (!textTime.isNullOrEmpty()){
             val time = textTime.toDouble()
-            val i: Intent = Intent(this,ResultActivity::class.java)
             aplication.time = time
+            val i: Intent = Intent(this,ResultActivity::class.java)
             i.putExtra("time",aplication)
             startActivity(i)
             finish()
