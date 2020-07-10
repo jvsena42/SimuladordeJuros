@@ -74,6 +74,18 @@ class ResultActivity : AppCompatActivity() {
     fun initializeGraphView() {
         val graph = id_graph
 
+        // activate horizontal and vertical zooming and scrolling
+        graph.viewport.setScalableY(true)
+
+        graph.viewport.isXAxisBoundsManual = true
+        graph.viewport.setMinX(1.0)
+        graph.viewport.setMaxX(aplication.month.toDouble())
+
+        // set manual Y bounds
+        graph.viewport.isYAxisBoundsManual = true
+        graph.viewport.setMinY(0.0)
+        graph.viewport.setMaxY(aplication.balance)
+
         try {
             var datapoints = mutableListOf<DataPoint>()
             for (app in aplications) {
