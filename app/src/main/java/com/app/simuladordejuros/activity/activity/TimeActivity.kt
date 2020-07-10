@@ -50,12 +50,12 @@ class TimeActivity : AppCompatActivity() {
 
     fun goToResult(view: View){
 
-        var time:Double = id_time.text.toString().toDouble()
-        if (time!=null){
+        var textTime = id_time.text.toString()
+        if (textTime.isNullOrEmpty()){
+            val time = textTime.toDouble()
             val i: Intent = Intent(this,ResultActivity::class.java)
             aplication.time = time
             i.putExtra("time",aplication)
-            Log.d("TAX",aplication.toString())
             startActivity(i)
             finish()
         }else{

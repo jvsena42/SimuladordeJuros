@@ -51,8 +51,9 @@ class AplicationValueActivity : AppCompatActivity() {
 
     fun goToTax(view: View){
 
-        val aplicationValue = id_aplication_value.text.toString().toDouble()
-        if (aplicationValue != null){
+        val textAplicationValue = id_aplication_value.text.toString()
+        if (!textAplicationValue.isNullOrEmpty()){
+            val aplicationValue = textAplicationValue.toDouble()
             val i: Intent = Intent(this,TaxActivity::class.java)
             aplication.aplicationValue = aplicationValue
             i.putExtra("aplicationValue",aplication)

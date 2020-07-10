@@ -47,8 +47,9 @@ class InitialValueActivity : AppCompatActivity() {
 
     fun goToAplicationValue(view: View){
 
-        val initialValue = id_initial_value.text.toString().toDouble()
-        if (initialValue != null){
+        val textInitialValue = id_initial_value.text.toString()
+        if (!textInitialValue.isNullOrBlank()){
+            val initialValue = textInitialValue.toDouble()
             val aplication = Aplication( initialValue)
             val i:Intent = Intent(this,AplicationValueActivity::class.java)
             i.putExtra("initialValue",aplication)

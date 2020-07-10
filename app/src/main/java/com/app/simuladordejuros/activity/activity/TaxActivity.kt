@@ -51,8 +51,9 @@ class TaxActivity : AppCompatActivity() {
 
     fun goToTime(view: View){
 
-        val tax:Double = (id_tax.text.toString().toDouble()/100)+1
-        if (tax!= null){
+        val textTax = id_tax.text.toString()
+        if (!textTax.isNullOrEmpty()){
+            val tax = textTax.toDouble()
             val i: Intent = Intent(this,TimeActivity::class.java)
             aplication.tax = tax
             i.putExtra("taxValue",aplication)
