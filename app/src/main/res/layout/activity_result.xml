@@ -23,7 +23,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_margin="8dp">
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="8dp">
 
                 <TextView
                         android:id="@+id/id_result"
@@ -43,7 +45,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:layout_margin="8dp"
-                    tools:background="@tools:sample/backgrounds/scenic" />
+                    android:padding="4dp"
+                    tools:background="@tools:sample/backgrounds/scenic">
+
+                <com.jjoe64.graphview.GraphView
+                        android:id="@+id/id_graph"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp" />
+
+            </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
