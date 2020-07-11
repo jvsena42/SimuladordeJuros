@@ -67,7 +67,7 @@ class ResultActivity : AppCompatActivity() {
         }
         adapterAplication.notifyDataSetChanged()
 
-        id_result.text = ("Seu saldo será de R$ ${String.format("%.2f", balance)}")
+        id_value.text = (String.format("%.2f", balance))
 
     }
 

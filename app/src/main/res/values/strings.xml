@@ -7,6 +7,6 @@
     <string name="tax_value">Digite o valor da taxa de juros mensal</string>
     <string name="time_value">Por quantos meses você quer investir?</string>
     <string name="calc">Calcular</string>
-    <string name="text_result">Você receberá</string>
+    <string name="text_result">Você receberá R$ </string>
     <string name="calc_again">Calcular Novamente</string>
 </resources>

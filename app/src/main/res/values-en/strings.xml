@@ -6,6 +6,6 @@
     <string name="tax_value">Monthly interest rate</string>
     <string name="time_value">Set the time in months</string>
     <string name="calc">Calculate</string>
-    <string name="text_result">You gonna have</string>
+    <string name="text_result">You gonna have $ </string>
     <string name="calc_again">Try again</string>
 </resources>

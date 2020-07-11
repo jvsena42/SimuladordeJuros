@@ -7,6 +7,6 @@
     <string name="tax_value">Tasa de interés mensual</string>
     <string name="time_value">¿Por cuántos meses quieres invertir?</string>
     <string name="calc">Calcular</string>
-    <string name="text_result">Vas a tener</string>
+    <string name="text_result">Vas a tener $ </string>
     <string name="calc_again">Recalcular</string>
 </resources>
