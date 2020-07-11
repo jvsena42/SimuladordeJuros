@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Simulador de Juros</string>
+    <string name="app_name">Calculadora de juros</string>
 
     <string name="initial_value">Digite o valor inicial</string>
     <string name="aplications_value">Valor das aplicações mensais</string>
