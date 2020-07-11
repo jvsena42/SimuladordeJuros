@@ -3,7 +3,7 @@
 
     <string name="initial_value">Digite o valor inicial</string>
     <string name="aplications_value">Valor das aplicações mensais</string>
-    <string name="ad_id">ca-app-pub-7567513635988403/6589696253</string>
+    <string name="ad_id" translatable="false">ca-app-pub-7567513635988403/6589696253</string>
     <string name="tax_value">Digite o valor da taxa de juros mensal</string>
     <string name="time_value">Por quantos meses você quer investir?</string>
     <string name="calc">Calcular</string>
