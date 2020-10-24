@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Calculadora de intereses</string>
+    <string name="app_name">Calculadora de interes</string>
 
     <string name="initial_value">Saldo inicial</string>
     <string name="aplications_value">Valor de solicitud mensual</string>
