@@ -27,6 +27,7 @@ class ResultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
 
         //initialize components
         recyclerResult = findViewById(R.id.id_recycler_result)

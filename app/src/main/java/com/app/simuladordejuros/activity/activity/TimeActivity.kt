@@ -21,6 +21,7 @@ class TimeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_time)
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
 
         aplication = intent.extras?.get("taxValue") as Aplication
 

@@ -21,6 +21,7 @@ class AplicationValueActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_aplication_value)
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
 
         aplication = intent.extras?.get("initialValue") as Aplication
 

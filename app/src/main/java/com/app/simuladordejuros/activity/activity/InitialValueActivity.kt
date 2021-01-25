@@ -20,6 +20,7 @@ class InitialValueActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_initial_value)
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
 
         //initialize admob
         MobileAds.initialize(this, "ca-app-pub-7567513635988403~5896288031")
