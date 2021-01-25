@@ -38,4 +38,6 @@ dependencies {
 
     //GraphView
     implementation 'com.jjoe64:graphview:4.2.2'
+
+    implementation "com.google.android.gms:play-services-instantapps:17.0.0"
 }
