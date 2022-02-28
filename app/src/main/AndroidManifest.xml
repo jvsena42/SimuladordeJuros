@@ -17,9 +17,7 @@
             android:screenOrientation="portrait"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity
-                android:name="com.app.simuladordejuros.main.MainActivity"
-                android:exported="false" />
+
         <activity android:name="com.app.simuladordejuros.main.TimeActivity"></activity>
         <activity android:name="com.app.simuladordejuros.main.TaxActivity"></activity>
         <activity android:name="com.app.simuladordejuros.main.AplicationValueActivity"></activity>
@@ -30,7 +28,7 @@
 
         <activity android:name="com.app.simuladordejuros.main.ResultActivity"></activity>
         <activity
-                android:name="com.app.simuladordejuros.main.InitialValueActivity"
+                android:name="com.app.simuladordejuros.main.MainActivity"
                 android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
