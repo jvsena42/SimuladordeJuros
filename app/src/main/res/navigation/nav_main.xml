@@ -20,7 +20,7 @@
             android:label="fragment_application_value"
             tools:layout="@layout/fragment_application_value" >
         <action
-                android:id="@+id/action_applicationValueFragment_to_taxFragment3"
+                android:id="@+id/action_applicationValueFragment_to_taxFragment"
                 app:destination="@id/taxFragment" />
     </fragment>
     <fragment
