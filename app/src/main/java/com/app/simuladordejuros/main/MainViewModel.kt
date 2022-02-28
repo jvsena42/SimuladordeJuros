@@ -8,7 +8,7 @@ import com.app.simuladordejuros.R
 import com.app.simuladordejuros.util.SingleLiveEvent
 
 class MainViewModel : ViewModel() {
-    private var _applicationModel = ApplicationModel()
+    private var _applicationModel = CapitalInvestment()
 
     private val _toastMessage = SingleLiveEvent<Int>()
     val toastMessage: LiveData<Int> = _toastMessage
@@ -16,8 +16,8 @@ class MainViewModel : ViewModel() {
     private val _nextScreen = SingleLiveEvent<Int>()
     val nextScreen: LiveData<Int> = _nextScreen
 
-    private val _resultList = MutableLiveData<List<ApplicationModel>>()
-    val resultList: LiveData<List<ApplicationModel>> = _resultList
+    private val _resultList = MutableLiveData<List<CapitalInvestment>>()
+    val resultList: LiveData<List<CapitalInvestment>> = _resultList
 
     private val _amountText = MutableLiveData<String>()
     val amountText: LiveData<String> = _amountText
@@ -63,11 +63,11 @@ class MainViewModel : ViewModel() {
     }
 
     fun calc() {
-        val applicationList = mutableListOf<ApplicationModel>()
+        val applicationList = mutableListOf<CapitalInvestment>()
 
         var i = 1
         while (i <= _applicationModel.time) {
-            val currentApplication = ApplicationModel().apply {
+            val currentApplication = CapitalInvestment().apply {
                 month = i
                 tax = _applicationModel.tax
                 applicationValue = _applicationModel.applicationValue

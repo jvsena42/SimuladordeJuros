@@ -6,13 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.app.simuladordejuros.R
-import com.app.simuladordejuros.main.ApplicationModel
+import com.app.simuladordejuros.main.CapitalInvestment
 import kotlinx.android.synthetic.main.adapter_result.view.*
 
-class AdapterAplication(
-    private val applicationModels: MutableList<ApplicationModel>,
+class AdapterApplication(
+    private val capitalInvestments: MutableList<CapitalInvestment>,
     private val context: Context
-) : RecyclerView.Adapter<AdapterAplication.ViewHolder>() {
+) : RecyclerView.Adapter<AdapterApplication.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view: View = LayoutInflater.from(context).inflate(R.layout.adapter_result,parent,false)
@@ -20,11 +20,11 @@ class AdapterAplication(
     }
 
     override fun getItemCount(): Int {
-        return applicationModels.size
+        return capitalInvestments.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        var aplication = applicationModels[position]
+        var aplication = capitalInvestments[position]
 
        // Log.d("APLICATIONS","Mês${aplication.month}: ${aplication.previousBalance} x ${aplication.tax} = ${aplication.balance} ")
 

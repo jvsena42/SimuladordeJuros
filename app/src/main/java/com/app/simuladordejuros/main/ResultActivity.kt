@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.app.simuladordejuros.R
-import com.app.simuladordejuros.adapter.AdapterAplication
+import com.app.simuladordejuros.adapter.AdapterApplication
 import com.jjoe64.graphview.series.DataPoint
 import com.jjoe64.graphview.series.LineGraphSeries
 import kotlinx.android.synthetic.main.activity_result.*
@@ -16,11 +16,11 @@ import kotlinx.android.synthetic.main.activity_result.*
 
 class ResultActivity : AppCompatActivity() {
 
-    lateinit var applicationModel: ApplicationModel
+    lateinit var capitalInvestment: CapitalInvestment
 
-    private var applicationModels: MutableList<ApplicationModel> = mutableListOf()
+    private var capitalInvestments: MutableList<CapitalInvestment> = mutableListOf()
     private lateinit var recyclerResult: RecyclerView
-    private lateinit var adapterAplication: AdapterAplication
+    private lateinit var adapterApplication: AdapterApplication
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,13 +31,13 @@ class ResultActivity : AppCompatActivity() {
         recyclerResult = findViewById(R.id.id_recycler_result)
 
         //configure recyclerview
-        adapterAplication = AdapterAplication(applicationModels, this)
+        adapterApplication = AdapterApplication(capitalInvestments, this)
         val layoutManager = LinearLayoutManager(this)
         recyclerResult.layoutManager = layoutManager
         recyclerResult.setHasFixedSize(true)
-        recyclerResult.adapter = adapterAplication
+        recyclerResult.adapter = adapterApplication
 
-        applicationModel = intent.extras?.get("time") as ApplicationModel
+        capitalInvestment = intent.extras?.get("time") as CapitalInvestment
         calc()
 
         //initialize graphView
@@ -45,26 +45,26 @@ class ResultActivity : AppCompatActivity() {
     }
 
     fun calc() {
-        val initialValue = applicationModel.initialValue
-        val aplicationsValue = applicationModel.applicationValue
-        val tax = applicationModel.tax
-        val time = applicationModel.time
+        val initialValue = capitalInvestment.initialValue
+        val aplicationsValue = capitalInvestment.applicationValue
+        val tax = capitalInvestment.tax
+        val time = capitalInvestment.time
 
         var balance = initialValue
         var i: Int = 1
         while (i <= time) {
-            applicationModel = ApplicationModel()
-            applicationModel.month = i
-            applicationModel.tax = tax
-            applicationModel.applicationValue = aplicationsValue
-            applicationModel.previousBalance = balance
+            capitalInvestment = CapitalInvestment()
+            capitalInvestment.month = i
+            capitalInvestment.tax = tax
+            capitalInvestment.applicationValue = aplicationsValue
+            capitalInvestment.previousBalance = balance
             balance = balance * tax + aplicationsValue
-            applicationModel.balance = balance
-            applicationModels.add(applicationModel)
-            Log.d("TESTE", applicationModels.toString())
+            capitalInvestment.balance = balance
+            capitalInvestments.add(capitalInvestment)
+            Log.d("TESTE", capitalInvestments.toString())
             i++
         }
-        adapterAplication.notifyDataSetChanged()
+        adapterApplication.notifyDataSetChanged()
 
         id_value.text = (String.format("%.2f", balance))
 
@@ -78,16 +78,16 @@ class ResultActivity : AppCompatActivity() {
 
         graph.viewport.isXAxisBoundsManual = true
         graph.viewport.setMinX(1.0)
-        graph.viewport.setMaxX(applicationModel.month.toDouble())
+        graph.viewport.setMaxX(capitalInvestment.month.toDouble())
 
         // set manual Y bounds
         graph.viewport.isYAxisBoundsManual = true
         graph.viewport.setMinY(0.0)
-        graph.viewport.setMaxY(applicationModel.balance)
+        graph.viewport.setMaxY(capitalInvestment.balance)
 
         try {
             var datapoints = mutableListOf<DataPoint>()
-            for (app in applicationModels) {
+            for (app in capitalInvestments) {
                 var dataPoint: DataPoint = DataPoint(app.month.toDouble(), app.balance)
                 datapoints.add(dataPoint)
             }

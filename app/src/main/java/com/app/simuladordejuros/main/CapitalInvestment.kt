@@ -4,7 +4,7 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class ApplicationModel  (
+data class CapitalInvestment  (
     var initialValue: Double = 0.0,
     var applicationValue: Double = 0.0,
     var tax: Double = 0.0,
