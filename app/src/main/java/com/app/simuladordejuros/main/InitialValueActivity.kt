@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.app.simuladordejuros.R
-import com.app.simuladordejuros.model.Aplication
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
 import kotlinx.android.synthetic.main.activity_initial_value.*
@@ -49,7 +48,7 @@ class InitialValueActivity : AppCompatActivity() {
         val textInitialValue = id_initial_value.text.toString()
         if (!textInitialValue.isNullOrBlank()){
             val initialValue = textInitialValue.toDouble()
-            val aplication = Aplication( initialValue)
+            val aplication = ApplicationModel( initialValue)
             val i:Intent = Intent(this,AplicationValueActivity::class.java)
             i.putExtra("initialValue",aplication)
             startActivity(i)

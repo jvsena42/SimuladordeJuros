@@ -9,4 +9,6 @@
     <string name="calc">Calcular</string>
     <string name="text_result">Vas a tener $ </string>
     <string name="calc_again">Recalcular</string>
+    <string name="mandatory_field">Campo obrigatorio</string>
+
 </resources>

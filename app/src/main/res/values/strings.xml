@@ -9,6 +9,6 @@
     <string name="calc">Calcular</string>
     <string name="text_result">Você receberá R$ </string>
     <string name="calc_again">Calcular Novamente</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mandatory_field">Campo obrigatório</string>
+
 </resources>

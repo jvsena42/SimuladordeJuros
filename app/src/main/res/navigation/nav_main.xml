@@ -35,5 +35,14 @@
             android:id="@+id/timeFragment"
             android:name="com.app.simuladordejuros.main.calcScreens.TimeFragment"
             android:label="fragment_time"
-            tools:layout="@layout/fragment_time" />
+            tools:layout="@layout/fragment_time" >
+        <action
+                android:id="@+id/action_timeFragment_to_resultFragment"
+                app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/resultFragment"
+            android:name="com.app.simuladordejuros.main.calcScreens.ResultFragment"
+            android:label="fragment_result"
+            tools:layout="@layout/fragment_result" />
 </navigation>

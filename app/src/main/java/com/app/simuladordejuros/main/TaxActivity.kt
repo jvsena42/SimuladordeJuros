@@ -6,14 +6,13 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.app.simuladordejuros.R
-import com.app.simuladordejuros.model.Aplication
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
 import kotlinx.android.synthetic.main.activity_tax.*
 
 class TaxActivity : AppCompatActivity() {
 
-    lateinit var aplication: Aplication
+    lateinit var applicationModel: ApplicationModel
     lateinit var mAdView : AdView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +20,7 @@ class TaxActivity : AppCompatActivity() {
         setContentView(R.layout.activity_tax)
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
 
-        aplication = intent.extras?.get("aplicationValue") as Aplication
+        applicationModel = intent.extras?.get("aplicationValue") as ApplicationModel
 
         //initialize admob
 //        MobileAds.initialize(this, "ca-app-pub-7567513635988403~5896288031")
@@ -54,8 +53,8 @@ class TaxActivity : AppCompatActivity() {
         if (!textTax.isNullOrEmpty()){
             val tax = (textTax.toDouble()/100)+1
             val i: Intent = Intent(this,TimeActivity::class.java)
-            aplication.tax = tax
-            i.putExtra("taxValue",aplication)
+            applicationModel.tax = tax
+            i.putExtra("taxValue",applicationModel)
             startActivity(i)
             finish()
         }else{

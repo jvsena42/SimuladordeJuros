@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.app.simuladordejuros.R
 import com.app.simuladordejuros.adapter.AdapterAplication
-import com.app.simuladordejuros.model.Aplication
 import com.jjoe64.graphview.series.DataPoint
 import com.jjoe64.graphview.series.LineGraphSeries
 import kotlinx.android.synthetic.main.activity_result.*
@@ -18,9 +17,9 @@ import kotlinx.android.synthetic.main.activity_result.*
 
 class ResultActivity : AppCompatActivity() {
 
-    lateinit var aplication: Aplication
+    lateinit var applicationModel: ApplicationModel
 
-    private var aplications: MutableList<Aplication> = mutableListOf()
+    private var applicationModels: MutableList<ApplicationModel> = mutableListOf()
     private lateinit var recyclerResult: RecyclerView
     private lateinit var adapterAplication: AdapterAplication
 
@@ -33,13 +32,13 @@ class ResultActivity : AppCompatActivity() {
         recyclerResult = findViewById(R.id.id_recycler_result)
 
         //configure recyclerview
-        adapterAplication = AdapterAplication(aplications, this)
+        adapterAplication = AdapterAplication(applicationModels, this)
         val layoutManager = LinearLayoutManager(this)
         recyclerResult.layoutManager = layoutManager
         recyclerResult.setHasFixedSize(true)
         recyclerResult.adapter = adapterAplication
 
-        aplication = intent.extras?.get("time") as Aplication
+        applicationModel = intent.extras?.get("time") as ApplicationModel
         calc()
 
         //initialize graphView
@@ -47,23 +46,23 @@ class ResultActivity : AppCompatActivity() {
     }
 
     fun calc() {
-        val initialValue = aplication.initialValue
-        val aplicationsValue = aplication.aplicationValue
-        val tax = aplication.tax
-        val time = aplication.time
+        val initialValue = applicationModel.initialValue
+        val aplicationsValue = applicationModel.aplicationValue
+        val tax = applicationModel.tax
+        val time = applicationModel.time
 
         var balance = initialValue
         var i: Int = 1
         while (i <= time) {
-            aplication = Aplication()
-            aplication.month = i
-            aplication.tax = tax
-            aplication.aplicationValue = aplicationsValue
-            aplication.previousBalance = balance
+            applicationModel = ApplicationModel()
+            applicationModel.month = i
+            applicationModel.tax = tax
+            applicationModel.aplicationValue = aplicationsValue
+            applicationModel.previousBalance = balance
             balance = balance * tax + aplicationsValue
-            aplication.balance = balance
-            aplications.add(aplication)
-            Log.d("TESTE", aplications.toString())
+            applicationModel.balance = balance
+            applicationModels.add(applicationModel)
+            Log.d("TESTE", applicationModels.toString())
             i++
         }
         adapterAplication.notifyDataSetChanged()
@@ -80,16 +79,16 @@ class ResultActivity : AppCompatActivity() {
 
         graph.viewport.isXAxisBoundsManual = true
         graph.viewport.setMinX(1.0)
-        graph.viewport.setMaxX(aplication.month.toDouble())
+        graph.viewport.setMaxX(applicationModel.month.toDouble())
 
         // set manual Y bounds
         graph.viewport.isYAxisBoundsManual = true
         graph.viewport.setMinY(0.0)
-        graph.viewport.setMaxY(aplication.balance)
+        graph.viewport.setMaxY(applicationModel.balance)
 
         try {
             var datapoints = mutableListOf<DataPoint>()
-            for (app in aplications) {
+            for (app in applicationModels) {
                 var dataPoint: DataPoint = DataPoint(app.month.toDouble(), app.balance)
                 datapoints.add(dataPoint)
             }

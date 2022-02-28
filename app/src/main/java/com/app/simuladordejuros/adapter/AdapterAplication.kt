@@ -6,11 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.app.simuladordejuros.R
-import com.app.simuladordejuros.model.Aplication
+import com.app.simuladordejuros.main.ApplicationModel
 import kotlinx.android.synthetic.main.adapter_result.view.*
 
 class AdapterAplication(
-    private val aplications: MutableList<Aplication>,
+    private val applicationModels: MutableList<ApplicationModel>,
     private val context: Context
 ) : RecyclerView.Adapter<AdapterAplication.ViewHolder>() {
 
@@ -20,11 +20,11 @@ class AdapterAplication(
     }
 
     override fun getItemCount(): Int {
-        return aplications.size
+        return applicationModels.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        var aplication = aplications[position]
+        var aplication = applicationModels[position]
 
        // Log.d("APLICATIONS","Mês${aplication.month}: ${aplication.previousBalance} x ${aplication.tax} = ${aplication.balance} ")
 

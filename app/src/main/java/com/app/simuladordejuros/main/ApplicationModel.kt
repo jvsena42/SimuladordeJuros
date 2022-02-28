@@ -1,8 +1,10 @@
-package com.app.simuladordejuros.model
+package com.app.simuladordejuros.main
 
-import java.io.Serializable
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 
-data class Aplication  (
+@Parcelize
+data class ApplicationModel  (
     var initialValue: Double =0.0,
     var aplicationValue: Double = 0.0,
     var tax: Double = 0.0,
@@ -10,5 +12,4 @@ data class Aplication  (
     var month: Int =1,
     var previousBalance: Double = 0.0,
     var balance: Double = 0.0
-): Serializable {
-}
+): Parcelable
