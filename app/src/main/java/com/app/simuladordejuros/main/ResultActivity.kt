@@ -1,6 +1,5 @@
 package com.app.simuladordejuros.main
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -47,7 +46,7 @@ class ResultActivity : AppCompatActivity() {
 
     fun calc() {
         val initialValue = applicationModel.initialValue
-        val aplicationsValue = applicationModel.aplicationValue
+        val aplicationsValue = applicationModel.applicationValue
         val tax = applicationModel.tax
         val time = applicationModel.time
 
@@ -57,7 +56,7 @@ class ResultActivity : AppCompatActivity() {
             applicationModel = ApplicationModel()
             applicationModel.month = i
             applicationModel.tax = tax
-            applicationModel.aplicationValue = aplicationsValue
+            applicationModel.applicationValue = aplicationsValue
             applicationModel.previousBalance = balance
             balance = balance * tax + aplicationsValue
             applicationModel.balance = balance

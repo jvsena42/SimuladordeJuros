@@ -5,11 +5,11 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class ApplicationModel  (
-    var initialValue: Double =0.0,
-    var aplicationValue: Double = 0.0,
+    var initialValue: Double = 0.0,
+    var applicationValue: Double = 0.0,
     var tax: Double = 0.0,
     var time: Double = 0.0,
-    var month: Int =1,
+    var month: Int = 1,
     var previousBalance: Double = 0.0,
     var balance: Double = 0.0
 ): Parcelable

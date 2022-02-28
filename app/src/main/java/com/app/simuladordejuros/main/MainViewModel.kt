@@ -8,7 +8,7 @@ import com.app.simuladordejuros.R
 import com.app.simuladordejuros.util.SingleLiveEvent
 
 class MainViewModel : ViewModel() {
-    private var applicationModel = ApplicationModel()
+    private var _applicationModel = ApplicationModel()
 
     private val _toastMessage = SingleLiveEvent<Int>()
     val toastMessage: LiveData<Int> = _toastMessage
@@ -16,10 +16,16 @@ class MainViewModel : ViewModel() {
     private val _nextScreen = SingleLiveEvent<Int>()
     val nextScreen: LiveData<Int> = _nextScreen
 
+    private val _resultList = MutableLiveData<List<ApplicationModel>>()
+    val resultList: LiveData<List<ApplicationModel>> = _resultList
+
+    private val _amountText = MutableLiveData<String>()
+    val amountText: LiveData<String> = _amountText
+
     fun setInitialValue(value: Editable?) {
         if (!value.isNullOrEmpty()) {
             val convertedValue = value.toString().toDouble()
-            applicationModel.initialValue = convertedValue
+            _applicationModel.initialValue = convertedValue
             _nextScreen.value = R.id.action_initialValueFragment_to_applicationValueFragment
         } else {
             errorMessage()
@@ -29,7 +35,7 @@ class MainViewModel : ViewModel() {
     fun setApplicationValue(value: Editable?) {
         if (!value.isNullOrEmpty()) {
             val convertedValue = value.toString().toDouble()
-            applicationModel.aplicationValue = convertedValue
+            _applicationModel.applicationValue = convertedValue
             _nextScreen.value = R.id.action_applicationValueFragment_to_taxFragment
         } else {
             errorMessage()
@@ -39,7 +45,7 @@ class MainViewModel : ViewModel() {
     fun setTaxValue(value: Editable?) {
         if (!value.isNullOrEmpty()) {
             val convertedValue = value.toString().toDouble()
-            applicationModel.tax = convertedValue
+            _applicationModel.tax = convertedValue
             _nextScreen.value = R.id.action_taxFragment_to_timeFragment
         } else {
             errorMessage()
@@ -49,11 +55,30 @@ class MainViewModel : ViewModel() {
     fun setTimeValue(value: Editable?) {
         if (!value.isNullOrEmpty()) {
             val convertedValue = value.toString().toDouble()
-            applicationModel.tax = convertedValue
+            _applicationModel.tax = convertedValue
             _nextScreen.value = R.id.action_timeFragment_to_resultFragment
         } else {
             errorMessage()
         }
+    }
+
+    fun calc() {
+        val applicationList = mutableListOf<ApplicationModel>()
+
+        var i = 1
+        while (i <= _applicationModel.time) {
+            val currentApplication = ApplicationModel().apply {
+                month = i
+                tax = _applicationModel.tax
+                applicationValue = _applicationModel.applicationValue
+                previousBalance = if (month == 1) _applicationModel.initialValue else balance
+                balance = previousBalance * tax + applicationValue
+            }
+            applicationList.add(currentApplication)
+            i++
+        }
+        _resultList.value = applicationList
+        _amountText.value = String.format("%.2f", applicationList.last().balance)
     }
 
     private fun errorMessage() {

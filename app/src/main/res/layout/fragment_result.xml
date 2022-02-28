@@ -21,7 +21,7 @@
             tools:background="@tools:sample/backgrounds/scenic">
 
         <com.jjoe64.graphview.GraphView
-                android:id="@+id/id_graph"
+                android:id="@+id/graph"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="2dp" />
@@ -111,7 +111,7 @@
                     android:layout_marginRight="8dp">
 
                 <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/id_recycler_result"
+                        android:id="@+id/resultVR"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:paddingBottom="8dp" />
@@ -122,7 +122,7 @@
     </ScrollView>
 
     <Button
-            android:id="@+id/button"
+            android:id="@+id/calAgainBTN"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
