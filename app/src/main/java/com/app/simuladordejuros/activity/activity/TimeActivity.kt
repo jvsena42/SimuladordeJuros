@@ -26,7 +26,7 @@ class TimeActivity : AppCompatActivity() {
         aplication = intent.extras?.get("taxValue") as Aplication
 
         //initialize admob
-        MobileAds.initialize(this, "ca-app-pub-7567513635988403~5896288031")
+//        MobileAds.initialize(this, "ca-app-pub-7567513635988403~5896288031")
 
         //load admob
         mAdView = findViewById(R.id.ad_view5)
