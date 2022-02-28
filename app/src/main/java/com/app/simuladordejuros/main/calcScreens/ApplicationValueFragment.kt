@@ -33,5 +33,4 @@ class ApplicationValueFragment : Fragment() {
             viewModel.setApplicationValue(applicationValueETX.text)
         }
     }
-
 }

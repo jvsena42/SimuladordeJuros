@@ -18,8 +18,8 @@ class MainViewModel : ViewModel() {
 
     fun setInitialValue(value: Editable?) {
         if (!value.isNullOrEmpty()) {
-            val initialValue = value.toString().toDouble()
-            applicationModel.initialValue = initialValue
+            val convertedValue = value.toString().toDouble()
+            applicationModel.initialValue = convertedValue
             _nextScreen.value = R.id.action_initialValueFragment_to_applicationValueFragment
         } else {
             errorMessage()
@@ -28,9 +28,19 @@ class MainViewModel : ViewModel() {
 
     fun setApplicationValue(value: Editable?) {
         if (!value.isNullOrEmpty()) {
-            val initialValue = value.toString().toDouble()
-            applicationModel.aplicationValue = initialValue
+            val convertedValue = value.toString().toDouble()
+            applicationModel.aplicationValue = convertedValue
             _nextScreen.value = R.id.action_applicationValueFragment_to_taxFragment
+        } else {
+            errorMessage()
+        }
+    }
+
+    fun setTaxValue(value: Editable?) {
+        if (!value.isNullOrEmpty()) {
+            val convertedValue = value.toString().toDouble()
+            applicationModel.tax = convertedValue
+            _nextScreen.value = R.id.action_taxFragment_to_timeFragment
         } else {
             errorMessage()
         }
