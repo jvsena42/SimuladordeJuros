@@ -44,5 +44,9 @@
             android:id="@+id/resultFragment"
             android:name="com.app.simuladordejuros.main.calcScreens.ResultFragment"
             android:label="fragment_result"
-            tools:layout="@layout/fragment_result" />
+            tools:layout="@layout/fragment_result" >
+        <action
+                android:id="@+id/action_resultFragment_to_initialValueFragment"
+                app:destination="@id/initialValueFragment" />
+    </fragment>
 </navigation>

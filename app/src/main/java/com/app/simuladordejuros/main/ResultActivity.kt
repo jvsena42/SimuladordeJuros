@@ -103,8 +103,8 @@ class ResultActivity : AppCompatActivity() {
     }
 
     fun backToStart(view: View) {
-        val i: Intent = Intent(this, InitialValueActivity::class.java)
+        /*val i: Intent = Intent(this, InitialValueActivity::class.java)
         startActivity(i)
-        finish()
+        finish()*/
     }
 }

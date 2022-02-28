@@ -46,6 +46,16 @@ class MainViewModel : ViewModel() {
         }
     }
 
+    fun setTimeValue(value: Editable?) {
+        if (!value.isNullOrEmpty()) {
+            val convertedValue = value.toString().toDouble()
+            applicationModel.tax = convertedValue
+            _nextScreen.value = R.id.action_timeFragment_to_resultFragment
+        } else {
+            errorMessage()
+        }
+    }
+
     private fun errorMessage() {
         _toastMessage.value = R.string.mandatory_field
     }
