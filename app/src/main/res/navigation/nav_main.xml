@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/nav_main">
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/nav_main"
+        app:startDestination="@id/initialValueFragment">
 
+    <fragment
+            android:id="@+id/initialValueFragment"
+            android:name="com.app.simuladordejuros.main.calcScreens.InitialValueFragment"
+            android:label="fragment_initial_value"
+            tools:layout="@layout/fragment_initial_value" >
+        <action
+                android:id="@+id/action_initialValueFragment_to_applicationValueFragment"
+                app:destination="@id/applicationValueFragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/applicationValueFragment"
+            android:name="com.app.simuladordejuros.main.calcScreens.ApplicationValueFragment"
+            android:label="fragment_application_value"
+            tools:layout="@layout/fragment_application_value" />
 </navigation>
