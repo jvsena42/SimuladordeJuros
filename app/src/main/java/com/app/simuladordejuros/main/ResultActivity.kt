@@ -1,4 +1,4 @@
-package com.app.simuladordejuros.activity.activity
+package com.app.simuladordejuros.main
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,8 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.app.simuladordejuros.R
-import com.app.simuladordejuros.activity.adapter.AdapterAplication
-import com.app.simuladordejuros.activity.model.Aplication
+import com.app.simuladordejuros.adapter.AdapterAplication
+import com.app.simuladordejuros.model.Aplication
 import com.jjoe64.graphview.series.DataPoint
 import com.jjoe64.graphview.series.LineGraphSeries
 import kotlinx.android.synthetic.main.activity_result.*

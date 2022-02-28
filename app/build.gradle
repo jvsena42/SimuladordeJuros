@@ -49,6 +49,11 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'com.google.android.material:material:1.5.0'
 
+    //viewModel
+    def viewModel_version = "2.4.1"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$viewModel_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$viewModel_version"
+
     //navigation
     def nav_version = "2.4.1"
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"

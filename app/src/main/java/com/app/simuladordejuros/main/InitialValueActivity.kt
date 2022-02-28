@@ -1,38 +1,32 @@
-package com.app.simuladordejuros.activity.activity
+package com.app.simuladordejuros.main
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.app.simuladordejuros.R
-import com.app.simuladordejuros.activity.model.Aplication
+import com.app.simuladordejuros.model.Aplication
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
-import com.google.android.gms.ads.MobileAds
-import kotlinx.android.synthetic.main.activity_aplication_value.*
+import kotlinx.android.synthetic.main.activity_initial_value.*
 
-class AplicationValueActivity : AppCompatActivity() {
+class InitialValueActivity : AppCompatActivity() {
 
-    lateinit var aplication:Aplication
     lateinit var mAdView : AdView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_aplication_value)
+        setContentView(R.layout.activity_initial_value)
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
-
-        aplication = intent.extras?.get("initialValue") as Aplication
 
         //initialize admob
 //        MobileAds.initialize(this, "ca-app-pub-7567513635988403~5896288031")
 
         //load admob
-        mAdView = findViewById(R.id.ad_view3)
+        mAdView = findViewById(R.id.ad_view2)
         val adRequest = AdRequest.Builder().build()
         mAdView.loadAd(adRequest)
-
     }
 
     override fun onPause() {
@@ -50,14 +44,14 @@ class AplicationValueActivity : AppCompatActivity() {
         super.onDestroy()
     }
 
-    fun goToTax(view: View){
+    fun goToAplicationValue(view: View){
 
-        val textAplicationValue = id_aplication_value.text.toString()
-        if (!textAplicationValue.isNullOrEmpty()){
-            val aplicationValue = textAplicationValue.toDouble()
-            val i: Intent = Intent(this,TaxActivity::class.java)
-            aplication.aplicationValue = aplicationValue
-            i.putExtra("aplicationValue",aplication)
+        val textInitialValue = id_initial_value.text.toString()
+        if (!textInitialValue.isNullOrBlank()){
+            val initialValue = textInitialValue.toDouble()
+            val aplication = Aplication( initialValue)
+            val i:Intent = Intent(this,AplicationValueActivity::class.java)
+            i.putExtra("initialValue",aplication)
             startActivity(i)
             finish()
         }else{
@@ -66,3 +60,4 @@ class AplicationValueActivity : AppCompatActivity() {
 
     }
 }
+

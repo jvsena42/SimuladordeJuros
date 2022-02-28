@@ -1,4 +1,4 @@
-package com.app.simuladordejuros.activity.model
+package com.app.simuladordejuros.model
 
 import java.io.Serializable
 

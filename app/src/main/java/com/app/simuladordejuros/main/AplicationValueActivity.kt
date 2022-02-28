@@ -1,37 +1,36 @@
-package com.app.simuladordejuros.activity.activity
+package com.app.simuladordejuros.main
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.app.simuladordejuros.R
-import com.app.simuladordejuros.activity.model.Aplication
+import com.app.simuladordejuros.model.Aplication
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
-import com.google.android.gms.ads.MobileAds
-import kotlinx.android.synthetic.main.activity_time.*
+import kotlinx.android.synthetic.main.activity_aplication_value.*
 
-class TimeActivity : AppCompatActivity() {
+class AplicationValueActivity : AppCompatActivity() {
 
-    lateinit var aplication: Aplication
+    lateinit var aplication:Aplication
     lateinit var mAdView : AdView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_time)
+        setContentView(R.layout.activity_aplication_value)
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
 
-        aplication = intent.extras?.get("taxValue") as Aplication
+        aplication = intent.extras?.get("initialValue") as Aplication
 
         //initialize admob
 //        MobileAds.initialize(this, "ca-app-pub-7567513635988403~5896288031")
 
         //load admob
-        mAdView = findViewById(R.id.ad_view5)
+        mAdView = findViewById(R.id.ad_view3)
         val adRequest = AdRequest.Builder().build()
         mAdView.loadAd(adRequest)
+
     }
 
     override fun onPause() {
@@ -49,14 +48,14 @@ class TimeActivity : AppCompatActivity() {
         super.onDestroy()
     }
 
-    fun goToResult(view: View){
+    fun goToTax(view: View){
 
-        var textTime = id_time.text.toString()
-        if (!textTime.isNullOrEmpty()){
-            val time = textTime.toDouble()
-            aplication.time = time
-            val i: Intent = Intent(this,ResultActivity::class.java)
-            i.putExtra("time",aplication)
+        val textAplicationValue = id_aplication_value.text.toString()
+        if (!textAplicationValue.isNullOrEmpty()){
+            val aplicationValue = textAplicationValue.toDouble()
+            val i: Intent = Intent(this,TaxActivity::class.java)
+            aplication.aplicationValue = aplicationValue
+            i.putExtra("aplicationValue",aplication)
             startActivity(i)
             finish()
         }else{

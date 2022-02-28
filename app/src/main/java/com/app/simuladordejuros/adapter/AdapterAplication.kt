@@ -1,13 +1,12 @@
-package com.app.simuladordejuros.activity.adapter
+package com.app.simuladordejuros.adapter
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.app.simuladordejuros.R
-import com.app.simuladordejuros.activity.model.Aplication
+import com.app.simuladordejuros.model.Aplication
 import kotlinx.android.synthetic.main.adapter_result.view.*
 
 class AdapterAplication(
