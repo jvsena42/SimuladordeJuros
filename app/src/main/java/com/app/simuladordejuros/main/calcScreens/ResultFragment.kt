@@ -30,7 +30,7 @@ class ResultFragment : Fragment() {
     }
 
     private fun onCLick() = binding.run {
-        calAgainBTN.setOnClickListener {
+        calcAgainBTN.setOnClickListener {
 
         }
     }
