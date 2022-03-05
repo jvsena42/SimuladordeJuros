@@ -51,6 +51,7 @@ class ResultFragment : Fragment() {
     private fun observe() {
         viewModel.resultList.observe(viewLifecycleOwner) { list ->
             initializeGraphView(list)
+            adapterResult.differ.submitList(list)
         }
         viewModel.amountText.observe(viewLifecycleOwner) { totalValue ->
             binding.valueTX.text = totalValue
