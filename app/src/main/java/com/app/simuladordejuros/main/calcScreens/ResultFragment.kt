@@ -7,19 +7,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.simuladordejuros.R
-import com.app.simuladordejuros.adapter.AdapterApplication
+import com.app.simuladordejuros.adapter.AdapterResult
 import com.app.simuladordejuros.databinding.FragmentResultBinding
 import com.app.simuladordejuros.main.CapitalInvestment
 import com.app.simuladordejuros.main.MainViewModel
 import com.jjoe64.graphview.series.DataPoint
 import com.jjoe64.graphview.series.LineGraphSeries
-import kotlinx.android.synthetic.main.activity_result.*
 
 class ResultFragment : Fragment() {
 
     private lateinit var binding: FragmentResultBinding
-    private lateinit var adapterApplication: AdapterApplication
+    private lateinit var adapterResult: AdapterResult
 
     private val viewModel: MainViewModel by viewModels()
 
@@ -35,14 +35,24 @@ class ResultFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentResultBinding.bind(view)
         onCLick()
+        initRecyclerView()
         observe()
+    }
+
+    private fun initRecyclerView() = binding.resultVR.run {
+        adapterResult = AdapterResult()
+        layoutManager = LinearLayoutManager(requireContext())
+        setHasFixedSize(true)
+        adapter = adapterResult
     }
 
     private fun observe() {
         viewModel.resultList.observe(viewLifecycleOwner) { list ->
             initializeGraphView(list)
         }
-
+        viewModel.amountText.observe(viewLifecycleOwner) { totalValue ->
+            binding.valueTX.text = totalValue
+        }
     }
 
     private fun onCLick() = binding.run {
@@ -51,7 +61,7 @@ class ResultFragment : Fragment() {
         }
     }
 
-    fun initializeGraphView(investmentList: List<CapitalInvestment>) = binding.graph.run {
+    private fun initializeGraphView(investmentList: List<CapitalInvestment>) = binding.graph.run {
 
         viewport.apply {
             // activate horizontal and vertical zooming and scrolling

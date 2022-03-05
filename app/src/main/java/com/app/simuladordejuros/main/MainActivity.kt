@@ -1,12 +1,12 @@
 package com.app.simuladordejuros.main
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation.findNavController
 import com.app.simuladordejuros.R
 import com.app.simuladordejuros.databinding.MainActivityBinding
+import com.app.simuladordejuros.util.showSnackbarRed
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun observe() {
         viewModel.toastMessage.observe(this) { messageRef ->
-            Toast.makeText(this, getString(messageRef), Toast.LENGTH_SHORT).show()
+            binding.root.showSnackbarRed(getString(messageRef))
         }
         viewModel.nextScreen.observe(this) {
             findNavController(this, R.id.navHost).navigate(it)
