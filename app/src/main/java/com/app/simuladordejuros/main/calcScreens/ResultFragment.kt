@@ -1,5 +1,6 @@
 package com.app.simuladordejuros.main.calcScreens
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import com.app.simuladordejuros.R
 import com.app.simuladordejuros.adapter.AdapterResult
 import com.app.simuladordejuros.databinding.FragmentResultBinding
 import com.app.simuladordejuros.main.CapitalInvestment
+import com.app.simuladordejuros.main.MainActivity
 import com.app.simuladordejuros.main.MainViewModel
 import com.jjoe64.graphview.series.DataPoint
 import com.jjoe64.graphview.series.LineGraphSeries
@@ -57,7 +59,8 @@ class ResultFragment : Fragment() {
 
     private fun onCLick() = binding.run {
         calcAgainBTN.setOnClickListener {
-
+            startActivity(Intent(requireActivity(),MainActivity::class.java))
+            requireActivity().finish()
         }
     }
 
