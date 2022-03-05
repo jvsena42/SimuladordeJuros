@@ -18,7 +18,7 @@
             android:layout_weight="1" />
 
     <com.google.android.gms.ads.AdView
-            android:id="@+id/ad_view2"
+            android:id="@+id/adView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:adSize="BANNER"
