@@ -12,7 +12,11 @@
             tools:layout="@layout/fragment_initial_value" >
         <action
                 android:id="@+id/action_initialValueFragment_to_applicationValueFragment"
-                app:destination="@id/applicationValueFragment" />
+                app:destination="@id/applicationValueFragment"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@android:anim/slide_in_left"
+                app:popExitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment
             android:id="@+id/applicationValueFragment"
@@ -21,7 +25,11 @@
             tools:layout="@layout/fragment_application_value" >
         <action
                 android:id="@+id/action_applicationValueFragment_to_taxFragment"
-                app:destination="@id/taxFragment" />
+                app:destination="@id/taxFragment"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@android:anim/slide_in_left"
+                app:popExitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment
             android:id="@+id/taxFragment"
@@ -29,7 +37,11 @@
             android:label="TaxFragment" >
         <action
                 android:id="@+id/action_taxFragment_to_timeFragment"
-                app:destination="@id/timeFragment" />
+                app:destination="@id/timeFragment"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@android:anim/slide_in_left"
+                app:popExitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment
             android:id="@+id/timeFragment"
@@ -38,7 +50,11 @@
             tools:layout="@layout/fragment_time" >
         <action
                 android:id="@+id/action_timeFragment_to_resultFragment"
-                app:destination="@id/resultFragment" />
+                app:destination="@id/resultFragment"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@android:anim/slide_in_left"
+                app:popExitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment
             android:id="@+id/resultFragment"
@@ -47,6 +63,10 @@
             tools:layout="@layout/fragment_result" >
         <action
                 android:id="@+id/action_resultFragment_to_initialValueFragment"
-                app:destination="@id/initialValueFragment" />
+                app:destination="@id/initialValueFragment"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@android:anim/slide_in_left"
+                app:popExitAnim="@android:anim/slide_out_right" />
     </fragment>
 </navigation>
