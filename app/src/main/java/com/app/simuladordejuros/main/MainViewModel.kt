@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.app.simuladordejuros.R
 import com.app.simuladordejuros.util.SingleLiveEvent
+import com.app.simuladordejuros.util.twoDecimal
 
 class MainViewModel : ViewModel() {
     private var _applicationModel = CapitalInvestment()
@@ -55,7 +56,7 @@ class MainViewModel : ViewModel() {
     fun setTimeValue(value: Editable?) {
         if (!value.isNullOrEmpty()) {
             val convertedValue = value.toString().toDouble()
-            _applicationModel.tax = convertedValue
+            _applicationModel.time = convertedValue
             _nextScreen.value = R.id.action_timeFragment_to_resultFragment
         } else {
             errorMessage()
@@ -65,8 +66,7 @@ class MainViewModel : ViewModel() {
     fun calc() {
         val applicationList = mutableListOf<CapitalInvestment>()
 
-        var i = 1
-        while (i <= _applicationModel.time) {
+        for (i in 1.._applicationModel.time.toInt()) {
             val currentApplication = CapitalInvestment().apply {
                 month = i
                 tax = _applicationModel.tax
@@ -75,10 +75,9 @@ class MainViewModel : ViewModel() {
                 balance = previousBalance * tax + applicationValue
             }
             applicationList.add(currentApplication)
-            i++
         }
         _resultList.value = applicationList
-        _amountText.value = String.format("%.2f", applicationList.last().balance)
+        _amountText.value = applicationList.last().balance.twoDecimal()
     }
 
     private fun errorMessage() {

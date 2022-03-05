@@ -40,6 +40,7 @@ class ResultFragment : Fragment() {
         onCLick()
         initRecyclerView()
         observe()
+        viewModel.calc()
     }
 
     private fun initRecyclerView() = binding.resultVR.run {
