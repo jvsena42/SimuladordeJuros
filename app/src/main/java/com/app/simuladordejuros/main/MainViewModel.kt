@@ -71,7 +71,7 @@ class MainViewModel : ViewModel() {
                 month = i
                 tax = _applicationModel.tax
                 applicationValue = _applicationModel.applicationValue
-                previousBalance = if (month == 1) _applicationModel.initialValue else balance
+                previousBalance = if (month == 1) _applicationModel.initialValue else applicationList[i-2].balance
                 balance = previousBalance * tax + applicationValue
             }
             applicationList.add(currentApplication)
