@@ -45,7 +45,7 @@ class MainViewModel : ViewModel() {
 
     fun setTaxValue(value: Editable?) {
         if (!value.isNullOrEmpty()) {
-            val convertedValue = value.toString().toDouble()
+            val convertedValue = 1.0 + value.toString().toDouble()/100.0
             _applicationModel.tax = convertedValue
             _nextScreen.value = R.id.action_taxFragment_to_timeFragment
         } else {
