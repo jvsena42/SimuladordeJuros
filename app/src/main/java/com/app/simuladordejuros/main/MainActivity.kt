@@ -27,5 +27,8 @@ class MainActivity : AppCompatActivity() {
         viewModel.nextScreen.observe(this) {
             findNavController(this, R.id.navHost).navigate(it)
         }
+        viewModel.bannerVisibility.observe(this) {
+            binding.adView2.visibility = it
+        }
     }
 }

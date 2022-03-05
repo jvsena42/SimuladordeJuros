@@ -1,6 +1,7 @@
 package com.app.simuladordejuros.main
 
 import android.text.Editable
+import android.view.View
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -22,6 +23,9 @@ class MainViewModel : ViewModel() {
 
     private val _amountText = MutableLiveData<String>()
     val amountText: LiveData<String> = _amountText
+
+    private val _bannerVisibility = MutableLiveData(View.VISIBLE)
+    val bannerVisibility: LiveData<Int> = _bannerVisibility
 
     fun setInitialValue(value: Editable?) {
         if (!value.isNullOrEmpty()) {
@@ -78,6 +82,10 @@ class MainViewModel : ViewModel() {
         }
         _resultList.value = applicationList
         _amountText.value = applicationList.last().balance.twoDecimal()
+    }
+
+    fun showBanner(shouldShow: Boolean) {
+        _bannerVisibility.value = if (shouldShow) View.VISIBLE else View.GONE
     }
 
     private fun errorMessage() {

@@ -41,6 +41,7 @@ class ResultFragment : Fragment() {
         initRecyclerView()
         observe()
         viewModel.calc()
+        viewModel.showBanner(false)
     }
 
     private fun initRecyclerView() = binding.resultVR.run {
