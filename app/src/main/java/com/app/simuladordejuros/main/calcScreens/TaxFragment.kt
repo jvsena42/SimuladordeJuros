@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import com.app.simuladordejuros.R
 import com.app.simuladordejuros.databinding.FragmentTaxBinding
@@ -14,7 +15,7 @@ import com.app.simuladordejuros.main.MainViewModel
 class TaxFragment : Fragment() {
 
     private lateinit var binding: FragmentTaxBinding
-    private val viewModel: MainViewModel by viewModels()
+    private val viewModel: MainViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

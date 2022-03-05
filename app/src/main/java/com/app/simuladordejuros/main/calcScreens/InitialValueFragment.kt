@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import com.app.simuladordejuros.R
 import com.app.simuladordejuros.databinding.FragmentInitialValueBinding
@@ -15,7 +16,7 @@ import com.app.simuladordejuros.main.MainViewModel
 class InitialValueFragment : Fragment() {
 
     private lateinit var binding: FragmentInitialValueBinding
-    private val viewModel: MainViewModel by viewModels()
+    private val viewModel: MainViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
