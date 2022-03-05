@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.app.simuladordejuros.R
 import com.app.simuladordejuros.databinding.AdapterResultBinding
 import com.app.simuladordejuros.main.CapitalInvestment
+import com.app.simuladordejuros.util.threeDecimal
+import com.app.simuladordejuros.util.twoDecimal
 import kotlinx.android.synthetic.main.adapter_result.view.*
 
 class AdapterResult: RecyclerView.Adapter<AdapterResult.ViewHolder>() {
@@ -26,7 +28,6 @@ class AdapterResult: RecyclerView.Adapter<AdapterResult.ViewHolder>() {
 
     val differ = AsyncListDiffer(this,callback)
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = AdapterResultBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return ViewHolder(binding)
@@ -42,7 +43,7 @@ class AdapterResult: RecyclerView.Adapter<AdapterResult.ViewHolder>() {
     inner class ViewHolder(private val binding: AdapterResultBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: CapitalInvestment) = binding.run {
-//            textAplication.text = "Mês ${aplication.month}: ${String.format("%.2f", aplication.previousBalance)} x ${String.format("%.3f", aplication.tax)} + ${String.format("%.2f", aplication.applicationValue)} = ${String.format("%.2f", aplication.balance)}"
+            itemResultTX.text = "${root.context.getString(R.string.month)} ${item.month}: ${item.previousBalance.twoDecimal()} x ${item.tax.threeDecimal()} + ${item.applicationValue.twoDecimal()} = ${item.balance.twoDecimal()}"
         }
     }
 }

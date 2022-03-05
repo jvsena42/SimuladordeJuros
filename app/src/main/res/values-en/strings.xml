@@ -9,5 +9,6 @@
     <string name="text_result">You gonna have $ </string>
     <string name="calc_again">Try again</string>
     <string name="mandatory_field">Mandatory field</string>
+    <string name="month">Month</string>
 
 </resources>
